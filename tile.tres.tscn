@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dumuwvmvn7ql1"]
+
+[ext_resource type="Texture2D" uid="uid://ceu0wp1cnnaoq" path="res://Tileset.png" id="1_03a41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qn2vw"]
+size = Vector2(16, 16)
+
+[node name="Tile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_03a41")
+hframes = 8
+vframes = 6
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_qn2vw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(8, 24)
+texture = ExtResource("1_03a41")
+hframes = 8
+vframes = 6
+frame = 9
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_qn2vw")

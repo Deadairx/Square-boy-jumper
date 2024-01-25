@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cep41j0os6kur"]
+
+[ext_resource type="PackedScene" uid="uid://dmybax5stilf2" path="res://Scenes/player.tscn" id="1_0ok82"]
+[ext_resource type="PackedScene" uid="uid://fiaethtmoegt" path="res://Scenes/box.tscn" id="2_7vvjk"]
+
+[sub_resource type="TileSet" id="TileSet_bkiri"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_pwvbj"]
+size = Vector2(1000, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cvxv"]
+size = Vector2(398, 44)
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_bkiri")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("1_0ok82")]
+position = Vector2(188, 145)
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(182, 167)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.121569, 0.121569, 0.121569, 1)
+scale = Vector2(0.398, 0.293333)
+mesh = SubResource("QuadMesh_pwvbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_0cvxv")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(535, 123)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
+modulate = Color(0.121569, 0.121569, 0.121569, 1)
+scale = Vector2(0.398, 0.293333)
+mesh = SubResource("QuadMesh_pwvbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+shape = SubResource("RectangleShape2D_0cvxv")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(-161, 123)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
+modulate = Color(0.121569, 0.121569, 0.121569, 1)
+scale = Vector2(0.398, 0.293333)
+mesh = SubResource("QuadMesh_pwvbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource("RectangleShape2D_0cvxv")
+
+[node name="Box" parent="." instance=ExtResource("2_7vvjk")]
+position = Vector2(124, 78)
+
+[node name="Box2" parent="." instance=ExtResource("2_7vvjk")]
+position = Vector2(242, 72)
